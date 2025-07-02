@@ -10,5 +10,6 @@ license.workspace = true
 rust-version.workspace = true
 
 [build-dependencies]
-bindgen = "0.71.1"
+bindgen = "0.69"
 anyhow = "1"
+shell-words = "1.1"
