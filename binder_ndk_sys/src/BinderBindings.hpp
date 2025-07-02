@@ -14,6 +14,14 @@
  * limitations under the License.
  */
 
+// 强制包含基本的 C/C++ 标准头文件
+#include <stddef.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <sys/types.h>
+#include <cstddef>
+#include <cstdint>
+
 #include <android/binder_ibinder.h>
 #include <android/binder_ibinder_platform.h>
 #include <android/binder_manager.h>
