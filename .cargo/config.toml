@@ -1,0 +1,22 @@
+[target.aarch64-linux-android]
+linker = "D:/android-ndk-r28b/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android33-clang.cmd"
+ar = "D:/android-ndk-r28b/toolchains/llvm/prebuilt/windows-x86_64/bin/llvm-ar.exe"
+rustflags = [
+    "-C", "link-arg=-fuse-ld=lld",
+    "-C", "link-arg=-Wl,--no-rosegment", 
+    "-C", "link-arg=-Wl,--no-undefined",
+]
+
+[env]
+# Android NDK 配置
+ANDROID_NDK_HOME = "D:/android-ndk-r28b"
+NDK_ROOT = "D:/android-ndk-r28b"
+
+# LLVM/Clang 配置 - 使用系统安装的 LLVM
+LIBCLANG_PATH = "D:/LLVM/bin"
+
+# Bindgen 配置 - 自动包含路径
+BINDGEN_EXTRA_CLANG_ARGS = "--sysroot=D:/android-ndk-r28b/toolchains/llvm/prebuilt/windows-x86_64/sysroot"
+
+[build]
+target = "aarch64-linux-android"
