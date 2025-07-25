@@ -38,7 +38,7 @@ fn build_stub() -> Result<()> {
     let mut f = std::fs::File::create(src_path.join("lib.rs"))?;
     for symbol in symbols.split("\n") {
         if !symbol.is_empty() {
-            f.write_all(format!("#[no_mangle]\npub extern fn {}() {{}}\n", symbol).as_bytes())?;
+            f.write_all(format!("#[no_mangle]\npub extern \"C\" fn {}() {{}}\n", symbol).as_bytes())?;
         }
     }
     f.flush()?;
